@@ -16,7 +16,8 @@ protocol RootViewBindable: ViewBindable {
 class RootViewController: UIViewController {
     
     let disposeBag = DisposeBag()
-    var viewModel = RootViewModel()
+    private var viewModel = RootViewModel()
+    static var sceneManagerDelegate: SceneManagerDelegateType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,7 @@ class RootViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        viewModel.viewState.subscribe (onNext:{ [weak self] state in
-            self?.pushViewBindable(state: state)
-        }).disposed(by: disposeBag)
-        
+        RootViewController.self.sceneManagerDelegate = SceneManager.init(rootviewController: self)
+        RootViewController.self.sceneManagerDelegate?.pushViewBindable(state: .main)
     }
 }

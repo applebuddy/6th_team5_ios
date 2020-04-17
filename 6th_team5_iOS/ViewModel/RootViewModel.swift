@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 struct RootViewModel: ViewModelType {
-    let viewState = BehaviorRelay<ViewPushState>(value: .main)
     
     init() {
         

@@ -18,6 +18,7 @@ class MainViewController: UIViewController, MainViewBindable {
 
     override func viewDidLoad() {
         super.viewDidLoad() // viewDidLoad 보다 layout이 먼저돈다??
+        RootViewController.self.sceneManagerDelegate?.modalViewBindable(state: .search)
     }
     
     func setRx() {

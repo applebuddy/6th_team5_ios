@@ -10,6 +10,7 @@ import Foundation
 
 enum ViewPushState: String {
     case main
+    case search
     
     func makeViewBindable () -> ViewBindable {
         switch self {
@@ -17,6 +18,10 @@ enum ViewPushState: String {
             var mainView = MainViewController()
             mainView.setUp(viewModel: MainViewModel())
             return mainView
+        case .search:
+            var searchView = SearchViewController()
+            searchView.setUp(viewModel: MainViewModel())
+            return searchView
         }
     }
 }

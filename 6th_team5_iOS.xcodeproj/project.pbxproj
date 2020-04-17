@@ -14,7 +14,7 @@
 		90A4BBA22440B7FA0080F5EF /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BB9F2440B7FA0080F5EF /* ViewModelType.swift */; };
 		90A4BBA32440B7FA0080F5EF /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BBA02440B7FA0080F5EF /* ViewType.swift */; };
 		90A4BBA42440B7FA0080F5EF /* ViewBindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BBA12440B7FA0080F5EF /* ViewBindable.swift */; };
-		90A4BBA82440B82F0080F5EF /* ViewChangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BBA72440B82F0080F5EF /* ViewChangeExtension.swift */; };
+		90A4BBA82440B82F0080F5EF /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BBA72440B82F0080F5EF /* SceneManager.swift */; };
 		90A4BBAF2440B8430080F5EF /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BBAA2440B8430080F5EF /* RootViewController.swift */; };
 		90A4BBB02440B8430080F5EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BBAB2440B8430080F5EF /* MainViewController.swift */; };
 		90A4BBB12440B8430080F5EF /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A4BBAD2440B8430080F5EF /* RootViewModel.swift */; };
@@ -24,6 +24,7 @@
 		90A4BBBB2440B8A50080F5EF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 90A4BBBA2440B8A50080F5EF /* RxCocoa */; };
 		90A4BBBD2440B8A50080F5EF /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 90A4BBBC2440B8A50080F5EF /* RxBlocking */; };
 		90A4BBC02440B8D70080F5EF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 90A4BBBF2440B8D70080F5EF /* SnapKit */; };
+		90E549DD244A023900043DAB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E549DC244A023900043DAB /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,11 +37,12 @@
 		90A4BB9F2440B7FA0080F5EF /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		90A4BBA02440B7FA0080F5EF /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		90A4BBA12440B7FA0080F5EF /* ViewBindable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBindable.swift; sourceTree = "<group>"; };
-		90A4BBA72440B82F0080F5EF /* ViewChangeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewChangeExtension.swift; sourceTree = "<group>"; };
+		90A4BBA72440B82F0080F5EF /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		90A4BBAA2440B8430080F5EF /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		90A4BBAB2440B8430080F5EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		90A4BBAD2440B8430080F5EF /* RootViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		90A4BBAE2440B8430080F5EF /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		90E549DC244A023900043DAB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +80,13 @@
 		90A4BB732440B5EB0080F5EF /* 6th_team5_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				90A4BBA92440B8430080F5EF /* View */,
+				90A4BBC12449F59B0080F5EF /* ViewController */,
 				90A4BBA62440B82F0080F5EF /* Extension */,
+				90A4BBAC2440B8430080F5EF /* ViewModel */,
 				90A4BB902440B6F00080F5EF /* Bindable */,
 				90A4BB742440B5EB0080F5EF /* AppDelegate.swift */,
 				90A4BB762440B5EB0080F5EF /* SceneDelegate.swift */,
-				90A4BBA92440B8430080F5EF /* View */,
-				90A4BBAC2440B8430080F5EF /* ViewModel */,
 				90A4BB7D2440B5EC0080F5EF /* Assets.xcassets */,
 				90A4BB7F2440B5EC0080F5EF /* LaunchScreen.storyboard */,
 				90A4BB822440B5EC0080F5EF /* Info.plist */,
@@ -104,7 +107,7 @@
 		90A4BBA62440B82F0080F5EF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				90A4BBA72440B82F0080F5EF /* ViewChangeExtension.swift */,
+				90A4BBA72440B82F0080F5EF /* SceneManager.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -112,8 +115,6 @@
 		90A4BBA92440B8430080F5EF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				90A4BBAA2440B8430080F5EF /* RootViewController.swift */,
-				90A4BBAB2440B8430080F5EF /* MainViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -125,6 +126,16 @@
 				90A4BBAE2440B8430080F5EF /* MainViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		90A4BBC12449F59B0080F5EF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				90A4BBAA2440B8430080F5EF /* RootViewController.swift */,
+				90A4BBAB2440B8430080F5EF /* MainViewController.swift */,
+				90E549DC244A023900043DAB /* SearchViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,8 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A4BBB12440B8430080F5EF /* RootViewModel.swift in Sources */,
+				90E549DD244A023900043DAB /* SearchViewController.swift in Sources */,
 				90A4BBA22440B7FA0080F5EF /* ViewModelType.swift in Sources */,
-				90A4BBA82440B82F0080F5EF /* ViewChangeExtension.swift in Sources */,
+				90A4BBA82440B82F0080F5EF /* SceneManager.swift in Sources */,
 				90A4BBA32440B7FA0080F5EF /* ViewType.swift in Sources */,
 				90A4BBA42440B7FA0080F5EF /* ViewBindable.swift in Sources */,
 				90A4BB752440B5EB0080F5EF /* AppDelegate.swift in Sources */,
