@@ -16,6 +16,16 @@ protocol SearchViewBindable: ViewBindable {
 
 class SearchViewController: UIViewController, SearchViewBindable {
     var viewModel: ViewModelType!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    func setEvent() {
+        return
+    }
     
     func layout() {
         self.view.backgroundColor = .red
@@ -29,27 +39,5 @@ class SearchViewController: UIViewController, SearchViewBindable {
             make.center.equalTo(self.view)
         }
     }
-    
-    func setRx() {
-        return
-    }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

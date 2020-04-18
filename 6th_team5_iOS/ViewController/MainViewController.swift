@@ -15,26 +15,33 @@ protocol MainViewBindable: ViewBindable {
 
 class MainViewController: UIViewController, MainViewBindable {
     var viewModel: ViewModelType!
+    private var label = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad() // viewDidLoad 보다 layout이 먼저돈다??
-        RootViewController.self.sceneManagerDelegate?.modalViewBindable(state: .search)
+        print("viewDidLoad")
     }
     
-    func setRx() {
-        print("hi")
+    func setEvent() {
+        let gestureReconigzer = UITapGestureRecognizer(target: self, action: #selector(viewChange(_:)))
+        self.label.addGestureRecognizer(gestureReconigzer)
+        print("setEvent")
     }
     
     func layout() {
         self.view.backgroundColor = .red
-        let label = UILabel()
-        label.text = "TTTT"
-        label.backgroundColor = .white
-        self.view.addSubview(label)
+        self.label.text = "TTTT"
+        self.label.backgroundColor = .white
+        self.view.addSubview(self.label)
+        self.label.isUserInteractionEnabled = true
         
-        label.snp.makeConstraints { make in
+        self.label.snp.makeConstraints { make in
             make.width.height.equalTo(100)
             make.center.equalTo(self.view)
         }
+    }
+    
+    @objc func viewChange(_ sender: Any) {
+        self.viewModel.pushView(state: .search)
     }
 }

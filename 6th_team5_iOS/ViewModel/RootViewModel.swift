@@ -7,12 +7,16 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
 
 struct RootViewModel: ViewModelType {
+
+    private var sceneManager = SceneManager()
     
     init() {
-        
+
+    }
+    
+    func pushView(state: ViewPushState) {
+        self.sceneManager.pushViewBindable(state: state)
     }
 }

@@ -7,9 +7,11 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
 
 struct MainViewModel: ViewModelType {
-    let mainPubSubject = PublishSubject<Void>()
+    var sceneManager = SceneManager()
+    
+    func pushView(state: ViewPushState) {
+        self.sceneManager.pushViewBindable(state: state)
+    }
 }

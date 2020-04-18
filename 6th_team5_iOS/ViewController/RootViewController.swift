@@ -7,17 +7,15 @@
 //
 
 import UIKit
-import RxSwift
 
 protocol RootViewBindable: ViewBindable {
     
 }
 
+/// ViewController에서 viewModel에 요청한 결과를 어떻게
 class RootViewController: UIViewController {
-    
-    let disposeBag = DisposeBag()
+
     private var viewModel = RootViewModel()
-    static var sceneManagerDelegate: SceneManagerDelegateType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +23,6 @@ class RootViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        RootViewController.self.sceneManagerDelegate = SceneManager.init(rootviewController: self)
-        RootViewController.self.sceneManagerDelegate?.pushViewBindable(state: .main)
+        viewModel.pushView(state: .main)
     }
 }

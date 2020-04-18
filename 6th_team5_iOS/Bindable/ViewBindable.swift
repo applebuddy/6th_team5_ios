@@ -14,13 +14,13 @@ protocol ViewBindable { // 동작을 요구하는 대상은 -able로 명명합�
     var viewModel: ViewModelType! { get  set }
     
     func layout()
-    func setRx()
+    func setEvent()
 }
 
 extension ViewBindable where Self: UIViewController {
     mutating func setUp(viewModel: ViewModelType) {
         self.viewModel = viewModel
         layout()
-        setRx()
+        setEvent()
     }
 }
