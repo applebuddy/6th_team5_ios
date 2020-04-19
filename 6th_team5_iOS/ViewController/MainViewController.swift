@@ -9,23 +9,21 @@
 import UIKit
 import SnapKit
 
-protocol MainViewBindable: ViewBindable {
+protocol MainViewScene: Scene {
     
 }
 
-class MainViewController: UIViewController, MainViewBindable {
+class MainViewController: UIViewController, MainViewScene {
     var viewModel: ViewModelType!
     private var label = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad() // viewDidLoad 보다 layout이 먼저돈다??
-        print("viewDidLoad")
     }
     
-    func setEvent() {
+    func setViewModel() {
         let gestureReconigzer = UITapGestureRecognizer(target: self, action: #selector(viewChange(_:)))
         self.label.addGestureRecognizer(gestureReconigzer)
-        print("setEvent")
     }
     
     func layout() {
@@ -42,6 +40,6 @@ class MainViewController: UIViewController, MainViewBindable {
     }
     
     @objc func viewChange(_ sender: Any) {
-        self.viewModel.pushView(state: .search)
+        self.viewModel.pushView(scene: .search)
     }
 }

@@ -8,12 +8,11 @@
 
 import UIKit
 
-protocol RootViewBindable: ViewBindable {
+protocol Root {
     
 }
 
-/// ViewController에서 viewModel에 요청한 결과를 어떻게
-class RootViewController: UIViewController {
+class RootViewController: UIViewController, Root {
 
     private var viewModel = RootViewModel()
     
@@ -23,6 +22,6 @@ class RootViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        viewModel.pushView(state: .main)
+        viewModel.pushView(scene: .main)
     }
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum ViewPushState: String {
+enum PushableScene: String {
     case main
     case search
     
-    func makeViewBindable () -> ViewBindable {
+    func makeViewBindable () -> Scene {
         switch self {
         case .main:
             var mainView = MainViewController()
@@ -24,4 +24,8 @@ enum ViewPushState: String {
             return searchView
         }
     }
+}
+
+enum ModalScene {
+    
 }

@@ -9,12 +9,12 @@
 import UIKit
 import SnapKit
 
-protocol SearchViewBindable: ViewBindable {
+protocol SearchViewScene: Scene {
     
 }
 
 
-class SearchViewController: UIViewController, SearchViewBindable {
+class SearchViewController: UIViewController, SearchViewScene {
     var viewModel: ViewModelType!
 
     override func viewDidLoad() {
@@ -23,7 +23,7 @@ class SearchViewController: UIViewController, SearchViewBindable {
         // Do any additional setup after loading the view.
     }
     
-    func setEvent() {
+    func setViewModel() {
         return
     }
     

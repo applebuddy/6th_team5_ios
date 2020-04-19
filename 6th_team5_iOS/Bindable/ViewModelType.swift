@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ViewModelType { // 주입 대상은 Type으로 명명합니다.
-    func pushView(state: ViewPushState)
+    func pushView(scene: PushableScene)
 }
 
 

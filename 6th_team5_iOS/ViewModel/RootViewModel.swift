@@ -16,7 +16,7 @@ struct RootViewModel: ViewModelType {
 
     }
     
-    func pushView(state: ViewPushState) {
-        self.sceneManager.pushViewBindable(state: state)
+    func pushView(scene: PushableScene) {
+        self.sceneManager.pushScene(scene: scene)
     }
 }

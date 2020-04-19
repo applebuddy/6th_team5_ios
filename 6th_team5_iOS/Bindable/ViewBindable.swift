@@ -9,18 +9,22 @@
 import Foundation
 import UIKit
 
-protocol ViewBindable { // 동작을 요구하는 대상은 -able로 명명합니다.
+
+/// ViewController에 상태[ViewModel, Layout]를 설정한 것을 Scene이라고 합니다.
+protocol Scene {
     
     var viewModel: ViewModelType! { get  set }
     
+    /// ViewController의 layout을 지정합니다.
     func layout()
-    func setEvent()
+    /// ViewController에 viewModel을 주입합니다.
+    func setViewModel()
 }
 
-extension ViewBindable where Self: UIViewController {
+extension Scene where Self: UIViewController {
     mutating func setUp(viewModel: ViewModelType) {
         self.viewModel = viewModel
         layout()
-        setEvent()
+        setViewModel()
     }
 }

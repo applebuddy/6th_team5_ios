@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootVC = RootViewController()
+        
+        // 화면 전환에는 SceneManager를 사용합니다. SceneManager를 control + command + 우클릭합니다.
         SceneManager.rootVC = rootVC
         window?.rootViewController = UINavigationController(rootViewController: rootVC)
         window!.makeKeyAndVisible()

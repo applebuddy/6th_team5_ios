@@ -11,7 +11,7 @@ import Foundation
 struct MainViewModel: ViewModelType {
     var sceneManager = SceneManager()
     
-    func pushView(state: ViewPushState) {
-        self.sceneManager.pushViewBindable(state: state)
+    func pushView(scene: PushableScene) {
+        self.sceneManager.changeCurrentScene(scene: scene)
     }
 }
